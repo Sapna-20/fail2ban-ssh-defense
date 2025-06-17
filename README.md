@@ -70,10 +70,23 @@ After 3 failed attempts, Fail2Ban will block the attacker’s IP:
 sudo fail2ban-client status sshd
 ```
 
+If a legitimate user or yourself gets blocked by mistake, you can remove the ban using:
+
+```bash
+sudo fail2ban-client set sshd unbanip <IP_ADDRESS>
+```
 To unban:
+
 ```bash
 sudo fail2ban-client set sshd unbanip 192.168.92.10
 ```
+To check the current status:
+
+```bash
+sudo fail2ban-client status sshd
+```
+
+Look at the "Banned IP list" section to confirm the IP has been removed.
 
 ---
 
